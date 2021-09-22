@@ -1,0 +1,81 @@
+/*-------------------Reset-------------------*/
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family:monospace;
+}
+body{
+    background-image: url(../imagens/wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+/*-------------------Relógio-------------------*/
+.clock{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(206, 0, 0, 0.336);
+    border-radius: 50%;
+    border: 10px solid rgb(34, 34, 34);
+    position: relative;
+}
+.clock .number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+}
+.clock .number1 {transform: rotate(30deg);}
+.clock .number2 {transform: rotate(60deg);}
+.clock .number3 {transform: rotate(90deg);}
+.clock .number4 {transform: rotate(120deg);}
+.clock .number5 {transform: rotate(150deg);}
+.clock .number6 {transform: rotate(180deg);}
+.clock .number7 {transform: rotate(210deg);}
+.clock .number8 {transform: rotate(240deg);}
+.clock .number9 {transform: rotate(270deg);}
+.clock .number10 {transform: rotate(300deg);}
+.clock .number11 {transform: rotate(330deg);}
+
+.clock .hand{
+    --rotate: 30;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border-radius: 10px 10px 0 0;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotate)*1deg));
+}
+.clock::after{
+    content:'';
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    z-index: 11;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+.clock .hand.minute{
+    width: 5px;
+    height: 40%;
+    background-color: rgb(255, 255, 255);
+}
+.clock .hand.hour{
+    width: 12px;
+    height: 35%;
+    background-color: #fff;
+}
